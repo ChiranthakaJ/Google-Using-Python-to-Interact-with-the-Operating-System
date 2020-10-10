@@ -36,3 +36,22 @@ Name: Eli Jones, Phone:684-348-1127, Role:IT Specialist
 Name: Melody Daniels, Phone:846-687-7436, Role:Programmer
 Name: Charlie Rivera, Phone:698-746-3357, Role:Web Developer
 '''
+
+#Similarly, we can use the writer function to generate contents to a file. This can be really helpful if you process some data in your script and you must store it in a file. 
+
+#Maybe you want to import it into a spreadsheet or use it later on in your script. We'll start by storing the data that we want to write into a list.
+
+hosts = [["workstation.local", "192.168.25.46"], ["webserver.cloud", "10.2.5.6"]]
+
+#We've created a list of lists. This is the data that we want to store in the CSV file, representing the names of the machines in our network and their IP addresses. 
+
+#All right, with that data ready to be written, let's open the file in write mode. We'll use the with block that we saw before so we don't forget to close the file.
+
+with open("hosts.csv", "w") as hosts.csv: 
+    writer = csv.writer(hosts.csv) 
+    writer.writerows(hosts)
+
+#The writer variable is now an instance of a CSV writer class. There are two functions that we can use: write row, which we'll write one row at a time; and write rows, which we'll write all of them together.
+
+#Let's see the content of the file outside Python. I use here Windows PowerShell. 
+#The command is Get_Content D:\MyDev\projects\Python\Google-IT-Automation-Scripts-Python\Google-Using-Python-to-Interact-with-the-Operating-System\csv_file.txt
