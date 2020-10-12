@@ -84,6 +84,10 @@ grep ^fruit /usr/share/dict/words.txt
 grep cat$ /usr/share/dict/words.txt
 '''
 
+#One thing to remember is that the circumflex and the dollar sign specifically match the start and end of the line, not a string. 
+
+#Take a log file for example, where each line contains a lot of different words. We can use a circumflex to check if a line begins with a pattern or use a dollar sign and check if it ends with a pattern, but our patterns will match only if the line fits that criteria, not the contained words.
+
 
 
 
