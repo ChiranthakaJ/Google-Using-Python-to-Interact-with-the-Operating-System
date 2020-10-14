@@ -27,13 +27,29 @@ print(re.search("cloud[a-zA-Z0-9]", "cloudy"))      #=====> <re.Match object; sp
 
 print(re.search("cloud[a-zA-Z0-9]", "cloud9"))      #=====> <re.Match object; span=(0, 6), match='cloud9'>
 
-#So as you can see, we can match anything that's defined between the square brackets. It's pretty cool, right? Well, this is super useful. 
+#So as you can see, we can match anything that's defined between the square brackets. It's pretty cool, right? 
+
+#Example 01 - Fill in the code to check if the text passed contains punctuation symbols: commas, periods, colons, semicolons, question marks, and exclamation points.
+
+import re
+def check_punctuation (text):
+  result = re.search(r"[,.:;?!]", text)
+  return result != None
+
+print(check_punctuation("This is a sentence that ends with a period.")) # True
+print(check_punctuation("This is a sentence fragment without a period")) # False
+print(check_punctuation("Aren't regular expressions awesome?")) # True
+print(check_punctuation("Wow! We're really picking up some steam now!")) # True
+print(check_punctuation("End of the line")) # False
+ 
+ 
+#Well, this is super useful. 
 
 #Sometimes we may want to match any characters that aren't in a group. To do that, we use a circumflex inside the square brackets. 
 
 #For example, let's create a search pattern that looks for any characters that's not a letter.
 
-print(re.search(r"[^a-zA-Z]", "This is a sentence ith spaces."))     #=====> <re.Match object; span=(4, 5), match=' '>
+print(re.search(r"[^a-zA-Z]", "This is a sentence with spaces."))     #=====> <re.Match object; span=(4, 5), match=' '>
 
 #Here, our pattern matched the first space in the sentence. What if we also add a space to the list of characters that we don't want to match?
 
@@ -46,3 +62,20 @@ print(re.search(r"[^a-zA-Z ]", "This is a sentence ith spaces."))   #=====> <re.
 #This lets us list alternative options that can get matched. For example, we could have an expression that matches either the word cat or the word dog, like this.
 
 print(re.search(r"cat|dog", "I like dogs."))        #=====> <re.Match object; span=(7, 10), match='dog'>
+
+#So since the string contains the sub string dog, the search function could find it. Let's try an example with cat.
+
+print(re.search(r"cat|dog", "I like cats."))        #=====> <re.Match object; span=(7, 10), match='cat'>
+
+#In this string, we actually have two possible matches for our search. 
+
+print(re.search(r"cat|dog", "I like cats and dogs."))  #=====> <re.Match object; span=(7, 10), match='cat'>
+
+#But we only get the first one. That's the way the search function works. If we want to get all possible matches, we can do that using the findall function, which is also provided by the re module, like this.
+
+print(re.findall(r"cat|dog", "I like cats and dogs."))  #=====> ['cat', 'dog']
+
+#So with findall, we don't need to choose between cats and dogs. 
+
+
+
