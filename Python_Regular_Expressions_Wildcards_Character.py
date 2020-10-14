@@ -53,7 +53,7 @@ print(re.search(r"[^a-zA-Z]", "This is a sentence with spaces."))     #=====> <r
 
 #Here, our pattern matched the first space in the sentence. What if we also add a space to the list of characters that we don't want to match?
 
-print(re.search(r"[^a-zA-Z ]", "This is a sentence ith spaces."))   #=====> <re.Match object; span=(29, 30), match='.'>
+print(re.search(r"[^a-zA-Z ]", "This is a sentence with spaces."))   #=====> <re.Match object; span=(29, 30), match='.'>
 
 #You might have guessed this. Because we added a space inside the character class, our example now matched the final dot in the sentence, which isn't in the list of characters to exclude. 
 
