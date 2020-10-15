@@ -64,3 +64,7 @@ print(check_character_groups("One")) # False
 print(check_character_groups("123  Ready Set GO")) # True
 print(check_character_groups("username user_01")) # True
 print(check_character_groups("shopping_list: milk, bread, eggs.")) # False
+
+#You don't need to memorize them all. You can always consult our cheat sheet or other similar references that tell you which sequence represents which characters. 
+
+#Another great resource for testing out your regular expressions is a website called regex101.com.
