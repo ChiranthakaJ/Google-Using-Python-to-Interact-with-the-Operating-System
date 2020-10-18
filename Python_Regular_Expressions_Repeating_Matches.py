@@ -1,5 +1,7 @@
 #So far we've looked at how to match one specific character, a group of characters or even any character. 
 
+#For repeating matched we use 'Repetition Qualifiers'.
+
 #Now we're going check out how to match these characters several times. 
 
 #So we wanted to find the longest word in the string, or we wanted to find the host names in a log file by checking for a bunch of alphanumeric characters between brackets. 
