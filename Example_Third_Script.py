@@ -1,6 +1,8 @@
-from PILLOW import *
+from PIL import Image
 
-image = PILLOW.Image.open("Capture_image.PNG")
+#image = PIL.Image.open("Capture_image.PNG")
+
+image = Image.open("Capture_image.png")
 
 print(image.size)
 
